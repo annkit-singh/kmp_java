@@ -1,9 +1,12 @@
 import java.util.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class KMP {
   public static void main(String[] args) throws Exception{
-    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+     BufferedInputStream bis = new BufferedInputStream(System.in);
+     BufferedReader in = new BufferedReader(new InputStreamReader(bis, StandardCharsets.UTF_8));  //for fast inputs
+    //  (faster than simple BufferedReader as it is based on inputstream which deals with bits )
     for (String W = in.readLine(); W != null; W = in.readLine()) {
       String S = in.readLine();
       KMP myKMP = new KMP(W);
